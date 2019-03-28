@@ -1,0 +1,129 @@
+$bar-color: #1c1c1c;
+$top-margin: 90px;
+$bar-height: 60px;
+$basic-anim-time: 0.1s;
+
+%basic-anim{
+  -webkit-transition: all $basic-anim-time ease;
+  -moz-transition: all $basic-anim-time ease;
+  -o-transition: all $basic-anim-time ease;
+  transition: all $basic-anim-time ease;
+}
+%button-style{
+  height: $bar-height;
+  background-color: #2d2d2d;
+  border: none;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 0.4;
+  transition: 0.2s;
+  &:hover{
+    opacity: 1;
+  }
+}
+%flexbox-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+body{
+  padding: 0;
+  margin: 0;
+  color: grey;
+}
+#bg{
+  filter: blur(1px);
+  display: block;
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  z-index: -1;
+}
+#top-wrapper{
+  height: $top-margin;
+  margin: auto;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+#mid-wrapper{
+  @extend %flexbox-container;
+  margin-top: $top-margin + $bar-height + 50px;
+  position: absolute;
+  div{
+    border-radius: 2px;
+    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-bottom: 50px;
+    width: 70%;
+    background-color: #C5AF99;
+    @extend %flexbox-container;
+  }
+}
+#bar{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: $bar-color;
+  width: 100%;
+  z-index: 99;
+  display: inline-flex;
+  justify-content: center;
+  button{
+    width: 20%;
+    @extend %button-style;
+  }
+}
+.bar-static{
+  margin-top: $top-margin;
+  position: absolute;
+}
+.bar-moving{
+  position: fixed;
+}
+@media screen and (min-width: 600px) {
+  #bar{
+    margin: 0;
+    width: $bar-height;
+    height: 100%;
+    display: block;
+    button{
+      display: block;
+      @extend %button-style;
+      width: 100%;
+      height: $bar-height;
+    }
+  }
+}
+#p1-list{
+  ul{
+    margin-top: $bar-height;
+  }
+}
+#p2-list{
+  width: 100%;
+  ul{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 0;
+    li{
+      flex-basis: auto;
+      background-color: black;
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+    }
+  }
+}
+button:hover{opacity: 1;}

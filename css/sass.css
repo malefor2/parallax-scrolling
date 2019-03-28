@@ -1,16 +1,19 @@
 * {
   box-sizing: border-box;
 }
+
 html {
   font-family: "Lucida Sans", sans-serif;
 }
-body{
+
+body {
   padding: 0;
   margin: 0;
   color: grey;
 }
-#bg{
-  filter: blur(0px);
+
+#bg {
+  filter: blur(1px);
   display: block;
   width: 100%;
   margin: 0;
@@ -18,15 +21,12 @@ body{
   background-image: url("bg.png");
   z-index: -1;
 }
-#top-wrapper{
-  margin: auto;
-  position: absolute;
-  top: 50px;
-  transform: translate(-50%, -50%);
-  left: 50%;
+
+#top-wrapper {
   text-align: center;
 }
-#mid-wrapper{
+
+#mid-wrapper {
   left: 50%;
   transform: translate(-50%, 0);
   margin-top: 150px;
@@ -34,32 +34,42 @@ body{
   text-align: center;
   display: block;
 }
-#bar{
-  z-index: 99;
-  display: block;
-}
-.bar-static{
+
+#bar {
   width: 100%;
+  z-index: 99;
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+.bar-static {
+  display: inline-flex;
+  justify-content: flex-end;
   margin-top: 120px;
   position: absolute;
   background-color: #1c1c1c;
   text-align: center;
 }
-.bar-moving{
-  width: 100vw;
+
+.bar-moving {
   position: fixed;
   background-color: #1c1c1c;
   margin: auto;
   text-align: center;
 }
-button{
+
+button {
   background-color: #2d2d2d;
   border: none;
   color: white;
-  margin: 5px;
-  padding: 4px;
+  margin: 0px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+#p1 {
+  width: 300px;
 }
